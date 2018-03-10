@@ -1,0 +1,40 @@
+> iris
+
+> dim(iris)
+
+> head(iris)
+
+> tail(iris)
+
+> str(iris)
+
+> summary(iris)
+
+> nums<-10:100
+> sample(nums,10)
+> nums
+
+> for(i in c(1:9)){
++   for(j in c(1:9)){
++      print(paste(i,"X",j,"=",i*j))
++ }
++ }
+
+> for(i in c(10:100)){
++   if(i==66){
++     print("太666666")
++     break
++   }
++   else if(i>=50&&i%%2==0){
++    print(paste("偶數並大於50",i))
++ }
++ }
+
+> y<-
++ if(y%%4==0&&y%%100!=0){
++ print(paste(y,"是閏年"))
++ }else if(y%%400==0){
++ print(paste(y,"是閏年"))
++ }else{
++ print(paste(y,"不是閏年))
++ }
