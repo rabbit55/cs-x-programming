@@ -39,3 +39,26 @@ y<-100
 + print(paste(y,"no"))
 + }
 
+> answer<-sample(0:9,4)
+> guess<-c(1,2,3,4)
+> a<-0
+> b<-0
+> guess_count<-0
+> for(i in c(1:4)){
++ if(guess[i]==answer[i]){
++ a<-a+1}
++ else{
++ for(j in x(1:4)){
++ if(guess[j]==answer[i]){
++ b <- b+1}
++ }
++ }
++ }
+> cat("A",a,"B",b)
+if(cat==4){
+cat(guess,"answer is correct",guess_count)
+}else{
+guess_count <- guess_count + 1
+cat(guess,"answer is wrong", guess_count)}
+
+
