@@ -40,7 +40,7 @@ y<-100
 + }
 
 > answer<-sample(0:9,4)
-> guess<-c(1,2,3,4)
+> guess<-scan(nmax=4)
 >guess_count<-0
 repeat{
 > a<-0
