@@ -1,0 +1,65 @@
+iris
+dim(iris)
+
+head(iris)
+
+tail(iris)
+
+str(iris)
+
+summary(iris)
+
+nums<-10:100
+sample(nums,10)
+nums
+for(i in c(1:9)){
+  for(j in c(1:9)){
+    print(paste(i,"X",j,"=",i*j))
+  }
+}
+
+for(i in c(10:100)){
+  if(i==66){
+    print("太666666")
+    break
+  }
+  else if(i>=50&&i%%2==0){
+    print(paste("偶數並大於50",i))
+  }
+}
+
+y<-100
+if(y%%4==0&&y%%100!=0){
+  print(paste(y,"yes"))
+}else if(y%%400==0){
+  print(paste(y,"yes"))
+}else{
+  print(paste(y,"no"))
+}
+
+answer<-sample(0:9,4)
+guess_count<-0
+repeat{
+  cat("請輸入四個不同的個位數字0~9")
+  guess<-scan(nmax=4)
+  a<-0
+  b<-0
+  for(i in 1:4){
+    if(guess[i]==answer[i]){
+      a<-a+1
+    }else{
+      for(j in 1:4){
+        if(guess[i]==answer[j]){
+          b <- b+1
+        }
+      }
+    }
+  }
+  cat("A",a,"B",b)
+  if(a==4){
+    cat("***your guess is***", guess,"answer is correct",guess_count)
+    break
+  }else{
+    guess_count <- guess_count + 1
+    cat("***your guess is***", guess,"answer is wrong", guess_count)}
+}
