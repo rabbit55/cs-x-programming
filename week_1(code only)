@@ -43,7 +43,7 @@ y<-100
 
 >guess_count<-0
 repeat{
-> cat("請輸入四個不同的個位數字")
+> cat("請輸入四個不同的個位數字0~9")
 > guess<-scan(nmax=4)
 > a<-0
 > b<-0
