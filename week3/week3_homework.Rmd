@@ -1,7 +1,7 @@
 ---
 title: "week3_homework"
 author: "christine"
-date: "2018å¹´3æœˆ21æ—¥"
+date: "2018å¹?3???21?—¥"
 output: html_document
 ---
 
@@ -23,10 +23,28 @@ You can also embed plots, for example:
 
 ```{r pressure, }
 #install.packages(,"tidyverse")
-install.packages("ggplot2")
+# install.packages("ggplot2")
 library(ggplot2)
 #devtools::install_github("tidyverse/ggplot2")
 diamonds
+#first diagram:cut and count
+ggplot(data = diamonds, aes(x = cut)) +
+geom_bar(fill = "blue", colour = "red")
+#second diagram:price and count
+ggplot(data = diamonds, aes(x = price)) + 
+geom_histogram()
+#third diagram:depth and count
+ggplot(data = diamonds, aes(x = depth)) +
+geom_histogram()
+#fourth diagram: price and depth
+ggplot(data = diamonds, aes(x = price, y=depth)) +
+geom_point()
+#fifth diagram: cut and depth
+ggplot(diamonds, aes(x=cut, y=depth)) +
+geom_boxplot()
+# sixth diagram:
+ggplot(diamonds, aes(x=clarity, y=price)) +
+geom_boxplot()
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
