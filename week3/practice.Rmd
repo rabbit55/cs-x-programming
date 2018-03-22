@@ -1,0 +1,39 @@
+---
+title: "week3_practice"
+author: "christine"
+date: "2018年3月17日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+#```{r cars}
+#summary(cars)
+#```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+#```{r pressure, echo=FALSE}
+#plot(pressure)
+#```
+```{r pressure, echo=FALSE}
+#there are bugs but I don't know why
+airquality
+head(airquality)
+install.packages("lattice")
+require(lattice)
+bwplot(x = Ozone ~ Month,      # 把Month放在X軸，Ozone放在Y軸
+       data = airquality,     
+       xlab = "Month"         
+       )
+```
