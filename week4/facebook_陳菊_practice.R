@@ -1,11 +1,10 @@
 library(httr)
 
-token  = "EAACEdEose0cBALZC69q7N0BhHAgRam00ZAQdGm2ecI8gePH5dWC2a4vhVSpc9CHwXltEn6f4K6UheLVmdV18bEy8SkSyxpRCVvCEAnsEoMj3OveOUw2nqsnzjsLoANNZAHWOd8ek5oqrTD7Uoxa0vbn6EoodZAiqRlUW1WZAONMCXvxeZCZAnpfFmI0m88D3cAZD"
-prefex = "https://graph.facebook.com/v2.12/kikuChen/posts?access_token="
+token  = "EAACEdEose0cBAHdX2m1JxTAzCCkH6wkOw9z3kJTBGfhuo6tkA2dI0DoQ9EMe44b1dqxHYqWZCZCYeZADzUiCyE6DoUZAEeNC50batIFfbiJsLKfsq9ceNlnNgZA6rEtAR3wjNc8zRE1d3oEeh5TJqmidL8WWkjL9112EVdwR0vKxCTMmUP9R1iuFCOxKX1ZANl7cBzH0T1KQZDZD"
+prefex = "https://graph.facebook.com/v2.12/https://www.facebook.com/kikuChen/?access_token="
 url    = paste0(prefex, token)
 res    = httr::GET(url)
 posts  = content(res)
-
 # res = POST("https://graph.facebook.com/v2.12/me/feed",
 #            body=list(message=sprintf("[TEST Posting Message] %s At %s","httr ด๚ธี",Sys.time()),
 #                      access_token=token))
