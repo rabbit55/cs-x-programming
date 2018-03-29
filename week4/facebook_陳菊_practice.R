@@ -5,6 +5,9 @@ prefex = "https://graph.facebook.com/v2.12/https://www.facebook.com/kikuChen/?ac
 url    = paste0(prefex, token)
 res    = httr::GET(url)
 posts  = content(res)
+library(Rfacebook)
+library(NLP)
+
 # res = POST("https://graph.facebook.com/v2.12/me/feed",
 #            body=list(message=sprintf("[TEST Posting Message] %s At %s","httr ด๚ธี",Sys.time()),
 #                      access_token=token))

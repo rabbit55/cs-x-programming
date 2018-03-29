@@ -1,7 +1,7 @@
 ---
 title: "week3_homework"
 author: "christine"
-date: "2018Ã¥Â¹?3???21?â€”Â¥"
+date: "2018Ã¥Â¹?3???21??”Â?"
 output: html_document
 ---
 
@@ -27,38 +27,40 @@ You can also embed plots, for example:
 library(ggplot2)
 #devtools::install_github("tidyverse/ggplot2")
 diamonds
-#å…ˆçœ‹çœ‹diamondsä¾æ“šé‚£äº›é¡åˆ¥åˆ†æ
+#??ˆç?‹ç?‹diamondsä¾æ?šé‚£äº›é?åˆ¥??†æ??
 #first diagram:cut and count
-ggplot(data = diamonds, aes(x = cut)) +
-geom_bar(fill = "blue", colour = "red")
-#å­¸åˆ°äº†geom_barå¯ä»¥ç•«é•·æ¢åœ–
+ggplot(data = diamonds, aes(x = cut,fill = cut)) +
+geom_bar(colour = "red")
+#å­¸åˆ°äº†geom_bar?¯ä»¥ç•«?•·æ¢å??
 
 #second diagram:price and count
 ggplot(data = diamonds, aes(x = price)) + 
 geom_histogram()
-#histogramé©ç”¨åœ¨é€£çºŒçš„æ•¸æ“š((å…ˆåˆ†æè³‡æ–™æ˜¯é›¢æ•£é‚„æ˜¯é€£çºŒå¾ˆé‡è¦!!!!
+#histogram?©?”¨?œ¨??çºŒç?„æ•¸???((??ˆå?†æ?è?‡æ?™æ˜¯?›¢?•£??„æ˜¯??çºŒå?ˆé?è??!!!!
 
 #third diagram:depth and count
 ggplot(data = diamonds, aes(x = depth)) +
 geom_histogram()
-#å†è‡ªå·±æ‰¾å…¶ä»–çš„è³‡æ–™ï¼Œåˆ¤æ–·depthæ˜¯é€£çºŒæ€§çš„è³‡æ–™
-#çœ‹åˆ°åœ–ç‰‡è·‘å‡ºä¾†çš„æˆå°±æ„Ÿ:)
+#??è‡ªå·±æ‰¾?…¶ä»–ç?„è?‡æ?™ï?Œåˆ¤?–·depth?˜¯?çºŒæ§ç?„è?‡æ??
+#??‹åˆ°??–ç?‡è?‘å‡ºä¾†ç?„æ?å°±???:)
 
 #fourth diagram: price and depth
 ggplot(data = diamonds, aes(x = price, y=depth)) +
 geom_point()
-#pointæ˜¯é»é™£åœ–ï¼Œç•¶å…©å€‹è³‡æ–™éƒ½æ˜¯é›¢æ•£çš„æ™‚å€™ç”¨çš„
+#point?˜¯é»é™£??–ï?Œç•¶?…©?‹è?‡æ?™éƒ½?˜¯?›¢?•£??„æ?‚å™ç”¨???
 
 #fifth diagram: cut and depth
 ggplot(diamonds, aes(x=cut, y=depth)) +
 geom_boxplot()
-#å­¸åˆ°boxplotï¼Œå¯ä»¥åˆ†æå¥½å¤šæ•¸æ“š(å››åˆ†ä½ç­‰ç­‰)
-#è‡ªå·±åˆ¤è®€è³‡æ–™æ‡‰è©²æ²’å•é¡Œäº†ï¼Œboxplotä¸€å€‹æ˜¯é€£çºŒä¸€å€‹æ˜¯é›¢æ•£
+#å­¸åˆ°boxplotï¼Œå¯ä»¥å?†æ?å¥½å¤šæ•¸???(??›å?†ä?ç?‰ç??)
+#?‡ªè³‡æ?™æ?‰è©²æ²’å?é?Œä?†ï?Œboxplot˜¯?›¢?•£
 
 # sixth diagram:
 ggplot(diamonds, aes(x=clarity, y=price)) +
+scale_fill_hue(l=40, c=35)+
 geom_boxplot()
-#å°æ„Ÿè¨€: è¦ºå¾—ç¹ªåœ–æ²’æœ‰æƒ³åƒä¸­é›£ï¼Œé›–ç„¶æˆ‘ç•«çš„åœ–éƒ½æ»¿é™½æ˜¥çš„ï¼Œä½†æ˜¯çœ‹åˆ°åœ–ç‰‡è·‘å‡ºä¾†é‚„æ˜¯å¾ˆé–‹å¿ƒ
+#å°æ?Ÿè?: è¦ºå?—ç¹ª??–æ?’æ?‰æƒ³??ä¸­?›£ï¼Œé?–ç„¶??‘ç•«??„å?–éƒ½æ»¿é™½?˜¥??„ï?Œä?†æ˜¯??‹åˆ°??–ç?‡è?‘å‡ºä¾†é?„æ˜¯å¾ˆé?‹å??
+
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
