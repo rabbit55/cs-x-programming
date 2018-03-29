@@ -10,7 +10,7 @@ tail(iris)
 str(iris)
 
 summary(iris)
-
+#大概就是分析一下這一大筆的資料，如果要找的分析數據有含括在內，應該滿好用的
 nums<-10:100
 sample(nums,10)
 #亂數
