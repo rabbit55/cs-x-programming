@@ -1,7 +1,7 @@
 ---
 title: "week3_homework"
 author: "christine"
-date: "2018�?3???21?��"
+date: "2018å¹?3???21?—¥"
 output: html_document
 ---
 
@@ -27,24 +27,38 @@ You can also embed plots, for example:
 library(ggplot2)
 #devtools::install_github("tidyverse/ggplot2")
 diamonds
+#先看看diamonds依據那些類別分析
 #first diagram:cut and count
 ggplot(data = diamonds, aes(x = cut)) +
 geom_bar(fill = "blue", colour = "red")
+#學到了geom_bar可以畫長條圖
+
 #second diagram:price and count
 ggplot(data = diamonds, aes(x = price)) + 
 geom_histogram()
+#histogram適用在連續的數據((先分析資料是離散還是連續很重要!!!!
+
 #third diagram:depth and count
 ggplot(data = diamonds, aes(x = depth)) +
 geom_histogram()
+#再自己找其他的資料，判斷depth是連續性的資料
+#看到圖片跑出來的成就感:)
+
 #fourth diagram: price and depth
 ggplot(data = diamonds, aes(x = price, y=depth)) +
 geom_point()
+#point是點陣圖，當兩個資料都是離散的時候用的
+
 #fifth diagram: cut and depth
 ggplot(diamonds, aes(x=cut, y=depth)) +
 geom_boxplot()
+#學到boxplot，可以分析好多數據(四分位等等)
+#自己判讀資料應該沒問題了，boxplot一個是連續一個是離散
+
 # sixth diagram:
 ggplot(diamonds, aes(x=clarity, y=price)) +
 geom_boxplot()
+#小感言: 覺得繪圖沒有想像中難，雖然我畫的圖都滿陽春的，但是看到圖片跑出來還是很開心
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
