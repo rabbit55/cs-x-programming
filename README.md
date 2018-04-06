@@ -55,10 +55,24 @@ During class
 
 1. Finish the ggplot session homework
 
-2. Learn how to gain all the post in facebook
+2. Learn how to gain all the posts in facebook
 
 After class
 
 1. Read through the learning packages.
 
 2. Couldn't figure out a way to make Wordcloud.
+
+Week5
+
+during class
+
+1. A peer helped me with finishing Wordcloud. Though I still haven't totally understanded how the code works.
+
+2. 
+
+After class
+
+1. I am interested in adding color in all diagrams, thus I look up some website and modify my ggplot homework.
+Here are the links: http://ggplot2.tidyverse.org/reference/geom_histogram.html
+                    http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/
