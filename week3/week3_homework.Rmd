@@ -27,39 +27,59 @@ You can also embed plots, for example:
 library(ggplot2)
 #devtools::install_github("tidyverse/ggplot2")
 diamonds
-#??ˆç?‹ç?‹diamondsä¾æ?šé‚£äº›é?åˆ¥??†æ??
+
 #first diagram:cut and count
+#drew the fist picture
+#I added color. It doesn't symbolize anything, because the system just randomly put color in this way, however, I was still delighted to see it appear.
 ggplot(data = diamonds, aes(x = cut,fill = cut)) +
 geom_bar(colour = "red")
-#å­¸åˆ°äº†geom_bar?¯ä»¥ç•«?•·æ¢å??
+
+#modified, add colour maually
+#problem I solved: rememer to add # in front of the color ID.
+ggplot(data = diamonds, aes(x = cut,fill = cut)) +
+geom_bar(colour = "black") +
+scale_fill_manual(values=c("#FFFF66", "#FFFF33", "#FFFF00", "#FFCC33", "#FFCC00"))
 
 #second diagram:price and count
-ggplot(data = diamonds, aes(x = price)) + 
-geom_histogram()
-#histogram?©?”¨?œ¨??çºŒç?„æ•¸???((??ˆå?†æ?è?‡æ?™æ˜¯?›¢?•£??„æ˜¯??çºŒå?ˆé?è??!!!!
+#try out another kind of picture
+#Problem I solved: fill = price must put inside aes()
+#I also learned that I can't add color manually for a continuous data
+#It is exciting when I found that this diagram can show more information by adding fill= cut!It is really encouraging to me
+#learn binwidth to alter the width of each bar
+ggplot(data = diamonds, aes(x = price, fill = cut)) + 
+geom_histogram(binwidth = 600) 
+
 
 #third diagram:depth and count
-ggplot(data = diamonds, aes(x = depth)) +
-geom_histogram()
-#??è‡ªå·±æ‰¾?…¶ä»–ç?„è?‡æ?™ï?Œåˆ¤?–·depth?˜¯?çºŒæ§ç?„è?‡æ??
-#??‹åˆ°??–ç?‡è?‘å‡ºä¾†ç?„æ?å°±???:)
+#learn to determine the type of the data(continue or not)
+#I realized that scale_colour_gradientn won't work for geom_histogram()
+#practice geom_freqpoly and also add colour = cut to know the difference between diferent sort of diamonds
+ggplot(data = diamonds, aes(x = depth, colour = cut)) +
+geom_freqpoly(binwidth = 500)
+
+
 
 #fourth diagram: price and depth
-ggplot(data = diamonds, aes(x = price, y=depth)) +
-geom_point()
-#point?˜¯é»é™£??–ï?Œç•¶?…©?‹è?‡æ?™éƒ½?˜¯?›¢?•£??„æ?‚å™ç”¨???
+#when two datas are both not continuous, use geom_point
+#I also tried to make changes to color, but I think it is not too meaningful in this case
+ggplot(data = diamonds, aes(x = depth, y=price, colour=price)) +
+geom_point() +
+scale_colour_gradientn(colours=rainbow(4))
 
 #fifth diagram: cut and depth
-ggplot(diamonds, aes(x=cut, y=depth)) +
-geom_boxplot()
-#å­¸åˆ°boxplotï¼Œå¯ä»¥å?†æ?å¥½å¤šæ•¸???(??›å?†ä?ç?‰ç??)
-#?‡ªè³‡æ?™æ?‰è©²æ²’å?é?Œä?†ï?Œboxplot˜¯?›¢?•£
+#challenge:make changes to the color
+#problem I solved: At first I added scale_fill_brewer(palette="PuOr")but nothing happened. As it turned out, I forgot to add fill = cut.
+ggplot(diamonds, aes(x=cut, y=depth, fill=cut)) +
+geom_boxplot() +
+scale_fill_brewer(palette = "PuOr")
+
 
 # sixth diagram:
-ggplot(diamonds, aes(x=clarity, y=price)) +
-scale_fill_hue(l=40, c=35)+
-geom_boxplot()
-#å°æ?Ÿè?: è¦ºå?—ç¹ª??–æ?’æ?‰æƒ³??ä¸­?›£ï¼Œé?–ç„¶??‘ç•«??„å?–éƒ½æ»¿é™½?˜¥??„ï?Œä?†æ˜¯??‹åˆ°??–ç?‡è?‘å‡ºä¾†é?„æ˜¯å¾ˆé?‹å??
+# challenge: change color of the diagram
+ggplot(diamonds, aes(x=clarity, y=price, fill=clarity)) +
+geom_boxplot() +
+scale_fill_brewer()
+
 
 ```
 

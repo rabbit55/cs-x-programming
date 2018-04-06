@@ -33,6 +33,9 @@ docs <- Corpus(VectorSource(page$message))
 toSpace <- content_transformer(function(x, pattern) {
   return (gsub(pattern, " ", x))}
 )
+```
+清洗文字
+```{r movie}
 docs <- tm_map(docs, toSpace, "的")
 docs <- tm_map(docs, toSpace, "啊")
 docs <- tm_map(docs, toSpace, "站")
@@ -60,6 +63,9 @@ jieba_tokenizer=function(d){
 }
 seg = lapply(docs, jieba_tokenizer)
 freqFrame = as.data.frame(table(unlist(seg)))
+```
+存成dataframe後劃出文字雲
+```{r final}
 freqFrame = freqFrame[-c(1:34),]
 wordcloud(freqFrame$Var1,freqFrame$Freq,
           scale=c(5,0.5),min.freq=10,max.words=50,
