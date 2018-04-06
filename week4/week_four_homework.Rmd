@@ -29,34 +29,30 @@ library(wordcloud)
 page.id <- "232716627404" 
 token <- "EAACEdEose0cBAHdX2m1JxTAzCCkH6wkOw9z3kJTBGfhuo6tkA2dI0DoQ9EMe44b1dqxHYqWZCZCYeZADzUiCyE6DoUZAEeNC50batIFfbiJsLKfsq9ceNlnNgZA6rEtAR3wjNc8zRE1d3oEeh5TJqmidL8WWkjL9112EVdwR0vKxCTMmUP9R1iuFCOxKX1ZANl7cBzH0T1KQZDZD" 
 page <- getPage(page.id, token, n = 300)
+str(page)
 docs <- Corpus(VectorSource(page$message))
 toSpace <- content_transformer(function(x, pattern) {
   return (gsub(pattern, " ", x))}
 )
 ```
-清洗文字
+It took me a while to find the token (I always forget easily).
+Then I try to understand the code and start cleaning the words which don't possess real meanings.
 ```{r movie}
 docs <- tm_map(docs, toSpace, "的")
 docs <- tm_map(docs, toSpace, "啊")
-docs <- tm_map(docs, toSpace, "站")
 docs <- tm_map(docs, toSpace, "有")
 docs <- tm_map(docs, toSpace, "了")
 docs <- tm_map(docs, toSpace, "是")
 docs <- tm_map(docs, toSpace, "很")
 docs <- tm_map(docs, toSpace, "都")
-docs <- tm_map(docs, toSpace, "在")
-docs <- tm_map(docs, toSpace, "和")
-docs <- tm_map(docs, toSpace, "這")
-docs <- tm_map(docs, toSpace, "讓")
-docs <- tm_map(docs, toSpace, "跟")
-docs <- tm_map(docs, toSpace, "就")
-docs <- tm_map(docs, toSpace, "真")
-docs <- tm_map(docs, toSpace, "上")
-docs <- tm_map(docs, toSpace, "但")
-docs <- tm_map(docs, toSpace, "又")
+docs <- tm_map(docs, toSpace, "我")
 docs <- tm_map(docs, removePunctuation)
 docs <- tm_map(docs, removeNumbers)
 docs <- tm_map(docs, stripWhitespace)
+docs <- tm_map(docs, function(word) {gsub("[A-Za-z0-9]", "", word)})
+```
+and now cut the words...
+```{r hardwork}
 mixseg = worker()
 jieba_tokenizer=function(d){
   unlist(segment(d[[1]],mixseg))
@@ -64,13 +60,13 @@ jieba_tokenizer=function(d){
 seg = lapply(docs, jieba_tokenizer)
 freqFrame = as.data.frame(table(unlist(seg)))
 ```
-存成dataframe後劃出文字雲
+put the text into dataframe and plot the wordcloud
 ```{r final}
 freqFrame = freqFrame[-c(1:34),]
 wordcloud(freqFrame$Var1,freqFrame$Freq,
-          scale=c(5,0.5),min.freq=10,max.words=50,
+          scale=c(3,0.5),min.freq=15,max.words=40,
           random.order=FALSE, random.color=TRUE, 
-          rot.per=0, colors=brewer.pal(8, "Dark2"),
+          rot.per=.1, colors=brewer.pal(8, "Dark2"),
           ordered.colors=FALSE,use.r.layout=FALSE,
           fixed.asp=TRUE)
 ```
