@@ -12,7 +12,7 @@ library(tidytext)
 
 rawData = readtext("*.txt")
 docs = Corpus(VectorSource(rawData$text))
-# data clean
+# clean the data, which I have learned when plotting wordcloud
 toSpace <- content_transformer(function(x, pattern) {
   return (gsub(pattern, " ", x))
 })
@@ -21,7 +21,7 @@ docs <- tm_map(docs, removeNumbers)
 docs <- tm_map(docs, stripWhitespace)
 docs <- tm_map(docs, toSpace, "[a-zA-Z]")
 
-# words cut
+# cut the words 
 keywords = read.csv("keywords.csv")
 mixseg = worker()
 keys = as.matrix(keywords)
@@ -38,7 +38,7 @@ tdm <- TermDocumentMatrix(d.corpus)
 print( tf <- as.matrix(tdm) )
 DF <- tidy(tf)
 
-# tf-idf computation
+# use the formula I learned to compute tf-idf
 N = tdm$ncol
 tf <- apply(tdm, 2, sum)
 idfCal <- function(word_doc)
