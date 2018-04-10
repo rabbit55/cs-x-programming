@@ -8,9 +8,9 @@ output: html_document
 
 ## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+B05502142 機械系林育萱
+Project 1
+Anaylizing NBA articles in PTT
 
 ```{r cars}
 library(bitops)
@@ -22,6 +22,98 @@ library(NLP)
 library(tmcn)
 library(jiebaRD)
 library(jiebaR)
+rm(list = ls())
+library(rvest)
+
+#I aim to analyze the keywords of NBA articles in PTT. Hopefully, the result can show me whether there is a team that is relatively popular in discussion. Also, I want to know what is the direction and keywords in these articles.
+
+#Attain the website of the articles
+from <- 3868 # 2018-03-29
+to   <- 3876 # 2018-04-01
+prefix = "https://www.ptt.cc/bbs/NBA/index"
+
+data <- list()
+for( id in c(from:to) )
+{
+  url  <- paste0( prefix, as.character(id), ".html" )
+  html <- htmlParse( GET(url) )
+  url.list <- xpathSApply( html, "//div[@class='title']/a[@href]", xmlAttrs )
+  data <- rbind( data, as.matrix(paste('https://www.ptt.cc', url.list, sep='')) )
+  #print(paste(id))
+  #add this line so that I know the for loop has run successfully.
+  res <- read_html(url)
+  #print(paste(url))
+  #by adding this line, I understood the reason why I only output part of the titles from the website.
+  raw.titles <- res %>% html_nodes("div.title")
+  nba.article.title <- raw.titles %>% html_text()
+}
+#I learned the difference between paste() and paste0(), the former can give order to seperate different things in (), and the latter will connect things in () without any blankspace
+data <- unlist(data)
+#take a loot at the data I successfully got
+head(data)
+tail(data)
+data
+nba.article.title
+#Success
+#Attain all the websites.
+#Fail
+#I want to get the titles of all the articles, but the result is only the last twenty titles.
+#Since extracting titles is not the main mission of this project, I focus on the rest of the work.
+
+#Attain the contents of the artickles I look for.
+#The difference between this project and the previous assignments is that I want to know the freqeucy of each keywords by time.
+#At first, I dealed with extracting all the contents from websites(this part was finished first), and then focuss on sorting the content with hours.And then, I failed. There were lots of errors I couldn't solve, so I put it into the same{}.
+#Problem: Perhaps I am processing a lot of data, RStudio isn't functioning well. It took a long time to show me the result after running the programs, which took me more time to work on it.
+library(dplyr)
+getdoc <- function(url)
+{
+  html <- htmlParse( getURL(url) )
+doc  <- xpathSApply( html, "//div[@id='main-content']", xmlValue )
+}
+sapply(data, getdoc)
+#Success
+#Got all the content, and I also learned the differences between apply, sapply, lapply.
+#I am confused how doc works.I understand that I use xpathsApply to gain content, but if I change the name of doc to doc111, it doesnt work.
+#Fail
+#I couldn't sort the articles in different timing classification. 
+#In order to finish this project, I simplified my work without the time factor.
+```
+library(dplyr)
+getdoc <- function(url)
+{
+html <- htmlParse( getURL(url) )
+doc  <- xpathSApply( html, "//div[@id='main-content']", xmlValue )
+time <- xpathSApply( html, "//*[@id='main-content']/div[4]/span[2]", xmlValue )
+temp.time <- gsub( "  ", " 0", unlist(time) )
+part <- strsplit( temp.time, split=" ", fixed=TRUE )
+timestamp <- part[[1]][4]
+timestamp <- strsplit( timestamp, split=":", fixed=TRUE )
+hour <- timestamp[[1]][1]
+print(hour)
+print(temp.time)
+name <- paste0('./DATA/', hour, ".txt")
+write.table(doc, name, append = TRUE)
+}
+sapply(data, getdoc)
+
+
+#use the skill I learned to clean the content
+docs <- Corpus(VectorSource(page$message))
+docs <- tm_map(docs, toSpace, "的")
+docs <- tm_map(docs, toSpace, "啊")
+docs <- tm_map(docs, toSpace, "有")
+docs <- tm_map(docs, toSpace, "了")
+docs <- tm_map(docs, toSpace, "是")
+docs <- tm_map(docs, toSpace, "很")
+docs <- tm_map(docs, toSpace, "都")
+docs <- tm_map(docs, toSpace, "我")
+docs <- tm_map(docs, toSpace, "喔")
+docs <- tm_map(docs, removePunctuation)
+docs <- tm_map(docs, removeNumbers)
+docs <- tm_map(docs, stripWhitespace)
+docs <- tm_map(docs, function(word) {gsub("[A-Za-z0-9]", "", word)})
+#Since I already had the practice in assigment, this part took me relatively less time.
+
 
 ```
 
