@@ -34,6 +34,7 @@ docs <- Corpus(VectorSource(page$message))
 toSpace <- content_transformer(function(x, pattern) {
   return (gsub(pattern, " ", x))}
 )
+
 ```
 It took me a while to find the token (I always forget easily).
 Then I try to understand the code and start cleaning the words which don't possess real meanings.
