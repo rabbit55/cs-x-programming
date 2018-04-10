@@ -1,16 +1,16 @@
 ---
-title: "project1"
+title: "project11"
 author: "christine"
-date: "2018年4月6日"
+date: "2018年4月10日"
 output: html_document
 ---
 
 
 ## R Markdown
 
-B05502142 機械系林育萱
-Project 1
-Anaylizing NBA articles in PTT
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
 ```{r cars}
 library(bitops)
@@ -28,8 +28,9 @@ library(rvest)
 #I aim to analyze the keywords of NBA articles in PTT. Hopefully, the result can show me whether there is a team that is relatively popular in discussion. Also, I want to know what is the direction and keywords in these articles.
 
 #Attain the website of the articles
-from <- 3868 # 2018-03-29
-to   <- 3876 # 2018-04-01
+
+from <- 3870 # 2018-03-25
+to   <- 3874 # 2018-03-31
 prefix = "https://www.ptt.cc/bbs/NBA/index"
 
 data <- list()
@@ -67,17 +68,21 @@ nba.article.title
 library(dplyr)
 getdoc <- function(url)
 {
-  html <- htmlParse( getURL(url) )
+html <- htmlParse( getURL(url) )
 doc  <- xpathSApply( html, "//div[@id='main-content']", xmlValue )
 }
 sapply(data, getdoc)
 #Success
 #Got all the content, and I also learned the differences between apply, sapply, lapply.
 #I am confused how doc works.I understand that I use xpathsApply to gain content, but if I change the name of doc to doc111, it doesnt work.
+#Confused, I don't know why there is a lot of blank space in my html.
 #Fail
 #I couldn't sort the articles in different timing classification. 
 #In order to finish this project, I simplified my work without the time factor.
 ```
+
+## Including Plots
+#First, I tried to write program with time, but it is too hard for me, so I stopped debugging and simplified my goal.
 library(dplyr)
 getdoc <- function(url)
 {
@@ -97,28 +102,3 @@ write.table(doc, name, append = TRUE)
 sapply(data, getdoc)
 
 
-#use the skill I learned to clean the content
-docs <- Corpus(VectorSource(page$message))
-docs <- tm_map(docs, toSpace, "的")
-docs <- tm_map(docs, toSpace, "啊")
-docs <- tm_map(docs, toSpace, "有")
-docs <- tm_map(docs, toSpace, "了")
-docs <- tm_map(docs, toSpace, "是")
-docs <- tm_map(docs, toSpace, "很")
-docs <- tm_map(docs, toSpace, "都")
-docs <- tm_map(docs, toSpace, "我")
-docs <- tm_map(docs, toSpace, "喔")
-docs <- tm_map(docs, removePunctuation)
-docs <- tm_map(docs, removeNumbers)
-docs <- tm_map(docs, stripWhitespace)
-docs <- tm_map(docs, function(word) {gsub("[A-Za-z0-9]", "", word)})
-#Since I already had the practice in assigment, this part took me relatively less time.
-
-
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
