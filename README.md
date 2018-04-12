@@ -40,6 +40,7 @@ During class
 2. Download Githubdesktop
 
 3. Finish my first Rcrawler and Rmarkdown
+   [week2_homework](file:///C:/Users/Christine%20Lin/Documents/GitHub/cs-x-programming/week2/week2rmarkdown.html)
 
 4. Introdcution to ggplot2
 
@@ -54,6 +55,7 @@ Week4
 During class
 
 1. Finish the ggplot session homework
+   [ggplot2_homework](file:///C:/Users/Christine%20Lin/Documents/GitHub/cs-x-programming/week3/week3_homework.html)
 
 2. Learn how to gain all the posts in facebook
 
@@ -68,13 +70,12 @@ Week5
 during class
 
 1. A peer helped me with finishing Wordcloud. Though I still haven't totally understanded how the code works.
-
-2. 
+   [week4_homework](file:///C:/Users/Christine%20Lin/Documents/GitHub/cs-x-programming/week4/week_four_homework.html)
 
 After class
 
 1. I am interested in adding color in all diagrams, thus I look up some website and modify my ggplot homework.
 Here are the links: http://ggplot2.tidyverse.org/reference/geom_histogram.html
                     http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/
-2. first project: file:///C:/Users/Christine%20Lin/Documents/GitHub/cs-x-programming/week6/project11.html
+2. [first project] (file:///C:/Users/Christine%20Lin/Documents/GitHub/cs-x-programming/week6/project11.html)
 
