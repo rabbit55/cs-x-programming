@@ -76,6 +76,7 @@ After class
 
 1. I am interested in adding color in all diagrams, thus I look up some website and modify my ggplot homework.
 Here are the links: http://ggplot2.tidyverse.org/reference/geom_histogram.html
+
                     http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/
 2. [first project] (https://rabbit55.github.io/cs-x-programming/week6/first_project.html)
 
