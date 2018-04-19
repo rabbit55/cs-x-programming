@@ -79,3 +79,9 @@ Here is the link: http://ggplot2.tidyverse.org/reference/geom_histogram.html
 
 2. [first project] (https://rabbit55.github.io/cs-x-programming/week6/first_project.html)
 
+Week6
+
+during class
+
+1. Learn a brief idea of machine leaning. Find kaggle really interesting! 
+
