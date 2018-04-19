@@ -1,23 +1,16 @@
-
 ---
 title: "Analyzing NBA articles and dicussions in PTT"
 author: "christine"
-date: "2018å¹´4æœˆ14æ—¥"
+date: "2018¦~4¤ë14¤é"
 output: html_document
 ---
-
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-At First, I tried to analyze the data with time difference, but I couldnâ€™t combine the content of articles. Therefore, I tried to make the project easier by simply using tfidf to find keywords. I succeeded in this part, but I didnâ€™t know how to change the form of the data. When I tried to use ggplot2, there was an error message: ggplot2 doesnâ€™t know how to deal with data of class matrix. In brief, I failed this project. I was not able to visualize the data.
+At First, I tried to analyze the data with time difference, but I couldn¡¦t combine the content of articles. Therefore, I tried to make the project easier by simply using tfidf to find keywords. I succeeded in this part, but I didn¡¦t know how to change the form of the data. When I tried to use ggplot2, there was an error message: ggplot2 doesn¡¦t know how to deal with data of class matrix. In brief, I failed this project. I was not able to visualize the data.
 
 Even though I failed, I still want to note down some reflection and some of my ideas. I aim to analyze NBA articles in PTT. If I were able to add time this factor into account, I would like to combine the matches of NBA. By comparing when the matches end, I may find a connection between the match and the articles content in PTT.
 
 At the end, I only finished tfidf part. To my excitement, I figured out that some popular players, indeed, have higher freqency at the result. Wade, lbj(labron james), Kobe, klay, curry are all famous NBA players, and their names are mentioned significantly more often.
 
-All in all, Iâ€™ve spent quite a long time on this project. It is a shame that I didnâ€™t make it. Hopefully, I will make more achievement in the following projects.
+All in all, I¡¦ve spent quite a long time on this project. It is a shame that I didn¡¦t make it. Hopefully, I will make more achievement in the following projects.
 
 
 
@@ -35,7 +28,6 @@ library(jiebaR)
 library(readtext)
 rm(list = ls())
 library(rvest)
-library(ggplot2)
 #I aim to analyze the keywords of NBA articles in PTT. Hopefully, the result can show me whether there is a team that is relatively popular in discussion. Also, I want to know what is the direction and keywords in these articles.
 
 #Attain the website of the articles
@@ -85,15 +77,12 @@ getdoc <- function(url)
 html <- htmlParse( getURL(url) )
 doc  <- xpathSApply( html, "//div[@id='main-content']", xmlValue )
 }
-content <- sapply(data, getdoc)
-head(content)
-
+sapply(data, getdoc)
 
 #Success
 #Got all the content, and I also learned the differences between apply, sapply, lapply.
 #I am confused how doc works.I understand that I use xpathsApply to gain content, but if I change the name of doc to doc111, it doesnt work.
-#Confused, I don't know why there is a lot of blank space in my html. During class, I asked my group mate, åŠ‰æŒ¯å¯§, he presumed that the reason might be that some articles have been deleted.
-
+#Confused, I don't know why there is a lot of blank space in my html.
 #Fail
 #I couldn't sort the articles in different timing classification. 
 #In order to finish this project, I simplified my work without the time factor.
@@ -121,10 +110,12 @@ NewDataFrame = merge(Allfreq[[1]], Allfreq[[2]], by="token", all = TRUE)
 #The second error message I faced is Error in fix.by(by, x, x). I looked up the question in stackoverflow, and knew that when merging data, one can only put two values as imput. 
 #I don't really know how to fix this problem, but I realized that when I imported the txt files, I can't read them from RStudio. So, I fixed this probelm (Still confused, will ask Teachers or Teaching assistance on thursday) and Rmarkdown ran smoothly and showed the html file.
 
+
 library(NLP)
 library(tm)
 library(stats)
 library(proxy)
+
 library(dplyr)
 library(readtext)
 library(jiebaRD)
@@ -132,7 +123,6 @@ library(jiebaR)
 library(slam)
 library(Matrix)
 library(tidytext)
-
 
 #tfidf
 rawData = readtext("*.txt")
@@ -183,14 +173,9 @@ for(x in 1:nrow(tdm))
 }
 
 findZeroId = as.matrix(apply(doc.tfidf, 1, sum))
-tfidfnn <- doc.tfidf[-which(findZeroId == 0),]
+tfidfnn = doc.tfidf[-which(findZeroId == 0),]
+write.csv(tfidfnn, "show.csv")
 
-#write.csv(tfidfnn, "show.csv")
-
-#Here I tried to see the first six keywords in a table. so I installed the packages library Matrix, but kable(), this function is not found. Eventually, I typed kable() r lilbrary, and found the library(knitr). Seems that my ability of finding solutions on my own is getting better and better. 
-library(knitr)
-kable(head(tfidfnn))
-kable(tail(tfidfnn))
 ```
 
 
