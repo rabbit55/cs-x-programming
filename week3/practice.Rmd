@@ -1,7 +1,7 @@
 ---
 title: "week3_practice"
 author: "christine"
-date: "2018年3月17日"
+date: "2018撟?3???17?"
 output: html_document
 ---
 
@@ -32,7 +32,7 @@ airquality
 head(airquality)
 install.packages("lattice")
 require(lattice)
-bwplot(x = Ozone ~ Month,      # 把Month放在X軸，Ozone放在Y軸
+bwplot(x = Ozone ~ Month,      # ??onth??X頠賂?zone??Y頠?
        data = airquality,     
        xlab = "Month"         
        )

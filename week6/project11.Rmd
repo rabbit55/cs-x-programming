@@ -1,7 +1,7 @@
 ---
 title: "project11--Analyzing "
 author: "christine"
-date: "2018¦~4¤ë10¤é"
+date: "2018å¹´4æœˆ10æ—¥"
 output: html_document
 ---
 
@@ -121,23 +121,23 @@ docs = Corpus(VectorSource(rawData$text))
 toSpace <- content_transformer(function(x, pattern) {
   return (gsub(pattern, " ", x))
 })
-docs <- tm_map(docs, toSpace, "ªº")
-docs <- tm_map(docs, toSpace, "°Ú")
-docs <- tm_map(docs, toSpace, "¦³")
-docs <- tm_map(docs, toSpace, "¤F")
-docs <- tm_map(docs, toSpace, "¬O")
-docs <- tm_map(docs, toSpace, "«Ü")
-docs <- tm_map(docs, toSpace, "³£")
-docs <- tm_map(docs, toSpace, "§Ú")
-docs <- tm_map(docs, toSpace, "³á")
-docs <- tm_map(docs, toSpace, "¹É")
-docs <- tm_map(docs, toSpace, "·F")
-docs <- tm_map(docs, toSpace, "¨S")
-docs <- tm_map(docs, toSpace, "§A")
-docs <- tm_map(docs, toSpace, "©p")
-docs <- tm_map(docs, toSpace, "­þ")
-docs <- tm_map(docs, toSpace, "¶Ü")
-docs <- tm_map(docs, toSpace, "§r")
+docs <- tm_map(docs, toSpace, "çš„")
+docs <- tm_map(docs, toSpace, "å•Š")
+docs <- tm_map(docs, toSpace, "æœ‰")
+docs <- tm_map(docs, toSpace, "äº†")
+docs <- tm_map(docs, toSpace, "æ˜¯")
+docs <- tm_map(docs, toSpace, "å¾ˆ")
+docs <- tm_map(docs, toSpace, "éƒ½")
+docs <- tm_map(docs, toSpace, "æˆ‘")
+docs <- tm_map(docs, toSpace, "å–”")
+docs <- tm_map(docs, toSpace, "å˜–")
+docs <- tm_map(docs, toSpace, "å¹¹")
+docs <- tm_map(docs, toSpace, "æ²’")
+docs <- tm_map(docs, toSpace, "ä½ ")
+docs <- tm_map(docs, toSpace, "å¦³")
+docs <- tm_map(docs, toSpace, "å“ª")
+docs <- tm_map(docs, toSpace, "å—Ž")
+docs <- tm_map(docs, toSpace, "å‘€")
 docs <- tm_map(docs, removePunctuation)
 docs <- tm_map(docs, removeNumbers)
 docs <- tm_map(docs, stripWhitespace)
@@ -146,11 +146,11 @@ docs <- tm_map(docs, stripWhitespace)
 
 
 
-#It took me a while to figure out which ½s½X to save the file, and I tried all types to find the right one.
+#It took me a while to figure out which ç·¨ç¢¼ to save the file, and I tried all types to find the right one.
 
 docnum = length(rawData)
 mixseg = worker()
-new_user_word(mixseg, c('ÁÉº¸´£§J','¿ï¨q¤j·|','·h¤WÂi­±'))
+new_user_word(mixseg, c('è³½çˆ¾æå…‹','é¸ç§€å¤§æœƒ','æ¬ä¸Šæª¯é¢'))
 #This is inspired by the sharing session during class. I took a look at the data. There were also words that are not cut correctly. In my case, there are only three big mistakes.
 Alltoken = list()
 Allfreq = list()

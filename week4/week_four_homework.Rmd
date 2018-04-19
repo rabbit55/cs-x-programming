@@ -1,7 +1,7 @@
 ---
 title: "week_four_practice"
 author: "christine"
-date: "2018¦~3¤ë29¤é"
+date: "2018å¹´3æœˆ29æ—¥"
 output: html_document
 ---
 
@@ -39,14 +39,14 @@ toSpace <- content_transformer(function(x, pattern) {
 It took me a while to find the token (I always forget easily).
 Then I try to understand the code and start cleaning the words which don't possess real meanings.
 ```{r movie}
-docs <- tm_map(docs, toSpace, "ªº")
-docs <- tm_map(docs, toSpace, "°Ú")
-docs <- tm_map(docs, toSpace, "¦³")
-docs <- tm_map(docs, toSpace, "¤F")
-docs <- tm_map(docs, toSpace, "¬O")
-docs <- tm_map(docs, toSpace, "«Ü")
-docs <- tm_map(docs, toSpace, "³£")
-docs <- tm_map(docs, toSpace, "§Ú")
+docs <- tm_map(docs, toSpace, "çš„")
+docs <- tm_map(docs, toSpace, "å•Š")
+docs <- tm_map(docs, toSpace, "æœ‰")
+docs <- tm_map(docs, toSpace, "äº†")
+docs <- tm_map(docs, toSpace, "æ˜¯")
+docs <- tm_map(docs, toSpace, "å¾ˆ")
+docs <- tm_map(docs, toSpace, "éƒ½")
+docs <- tm_map(docs, toSpace, "æˆ‘")
 docs <- tm_map(docs, removePunctuation)
 docs <- tm_map(docs, removeNumbers)
 docs <- tm_map(docs, stripWhitespace)
