@@ -1,16 +1,16 @@
 ---
 title: "Analyzing NBA articles and dicussions in PTT"
 author: "christine"
-date: "2018¦~4¤ë14¤é"
+date: "2018å¹´4æœˆ14æ—¥"
 output: html_document
 ---
-At First, I tried to analyze the data with time difference, but I couldn¡¦t combine the content of articles. Therefore, I tried to make the project easier by simply using tfidf to find keywords. I succeeded in this part, but I didn¡¦t know how to change the form of the data. When I tried to use ggplot2, there was an error message: ggplot2 doesn¡¦t know how to deal with data of class matrix. In brief, I failed this project. I was not able to visualize the data.
+At First, I tried to analyze the data with time difference, but I couldnâ€™t combine the content of articles. Therefore, I tried to make the project easier by simply using tfidf to find keywords. I succeeded in this part, but I didnâ€™t know how to change the form of the data. When I tried to use ggplot2, there was an error message: ggplot2 doesnâ€™t know how to deal with data of class matrix. In brief, I failed this project. I was not able to visualize the data.
 
 Even though I failed, I still want to note down some reflection and some of my ideas. I aim to analyze NBA articles in PTT. If I were able to add time this factor into account, I would like to combine the matches of NBA. By comparing when the matches end, I may find a connection between the match and the articles content in PTT.
 
 At the end, I only finished tfidf part. To my excitement, I figured out that some popular players, indeed, have higher freqency at the result. Wade, lbj(labron james), Kobe, klay, curry are all famous NBA players, and their names are mentioned significantly more often.
 
-All in all, I¡¦ve spent quite a long time on this project. It is a shame that I didn¡¦t make it. Hopefully, I will make more achievement in the following projects.
+All in all, Iâ€™ve spent quite a long time on this project. It is a shame that I didnâ€™t make it. Hopefully, I will make more achievement in the following projects.
 
 
 

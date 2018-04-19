@@ -1,7 +1,7 @@
 ---
 title: "week3_homework"
 author: "christine"
-date: "2018å¹?3???21??��?"
+date: "2018疇繒?3???21???"
 output: html_document
 ---
 
