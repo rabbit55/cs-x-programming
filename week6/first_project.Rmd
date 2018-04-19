@@ -28,6 +28,7 @@ library(jiebaR)
 library(readtext)
 rm(list = ls())
 library(rvest)
+library(ggplot2)
 #I aim to analyze the keywords of NBA articles in PTT. Hopefully, the result can show me whether there is a team that is relatively popular in discussion. Also, I want to know what is the direction and keywords in these articles.
 
 #Attain the website of the articles
@@ -77,7 +78,8 @@ getdoc <- function(url)
 html <- htmlParse( getURL(url) )
 doc  <- xpathSApply( html, "//div[@id='main-content']", xmlValue )
 }
-sapply(data, getdoc)
+content <- sapply(data, getdoc)
+head(content)
 
 #Success
 #Got all the content, and I also learned the differences between apply, sapply, lapply.
@@ -121,8 +123,9 @@ library(readtext)
 library(jiebaRD)
 library(jiebaR)
 library(slam)
-library(Matrix)
+
 library(tidytext)
+
 
 #tfidf
 rawData = readtext("*.txt")
@@ -176,6 +179,9 @@ findZeroId = as.matrix(apply(doc.tfidf, 1, sum))
 tfidfnn = doc.tfidf[-which(findZeroId == 0),]
 write.csv(tfidfnn, "show.csv")
 
+#Here I tried to see the first six keywords in a table. so I installed the packages library Matrix, but kable(), this function is not found.
+library(Matrix)
+#kable(head(tfidfnn))
 ```
 
 
