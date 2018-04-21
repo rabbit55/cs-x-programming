@@ -85,3 +85,5 @@ during class
 
 1. Learn a brief idea of machine leaning. Find kaggle really interesting! 
 
+2. 
+
