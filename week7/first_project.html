@@ -120,15 +120,15 @@ $(document).ready(function () {
 
 <h1 class="title toc-ignore">Analyzing NBA articles and dicussions in PTT</h1>
 <h4 class="author"><em>christine</em></h4>
-<h4 class="date"><em>2018年4月14日</em></h4>
+<h4 class="date"><em>2018/4/21</em></h4>
 
 </div>
 
 
-<p>At First, I tried to analyze the data with time difference, but I couldn’t combine the content of articles. Therefore, I tried to make the project easier by simply using tfidf to find keywords. I succeeded in this part, but I didn’t know how to change the form of the data. When I tried to use ggplot2, there was an error message: ggplot2 doesn’t know how to deal with data of class matrix. In brief, I failed this project. I was not able to visualize the data.</p>
+<p>At First, I tried to analyze the data with time difference, but I couldn? combine the content of articles. Therefore, I tried to make the project easier by simply using tfidf to find keywords. I succeeded in this part, but I didn? know how to change the form of the data. When I tried to use ggplot2, there was an error message: ggplot2 doesn? know how to deal with data of class matrix. In brief, I failed this project. I was not able to visualize the data.</p>
 <p>Even though I failed, I still want to note down some reflection and some of my ideas. I aim to analyze NBA articles in PTT. If I were able to add time this factor into account, I would like to combine the matches of NBA. By comparing when the matches end, I may find a connection between the match and the articles content in PTT.</p>
 <p>At the end, I only finished tfidf part. To my excitement, I figured out that some popular players, indeed, have higher freqency at the result. Wade, lbj(labron james), Kobe, klay, curry are all famous NBA players, and their names are mentioned significantly more often.</p>
-<p>All in all, I’ve spent quite a long time on this project. It is a shame that I didn’t make it. Hopefully, I will make more achievement in the following projects.</p>
+<p>All in all, I?e spent quite a long time on this project. It is a shame that I didn? make it. Hopefully, I will make more achievement in the following projects.</p>
 <pre class="r"><code>library(bitops)
 library(httr)
 library(RCurl)
@@ -349,7 +349,7 @@ head(content)</code></pre>
 <pre class="r"><code>#Success
 #Got all the content, and I also learned the differences between apply, sapply, lapply.
 #I am confused how doc works.I understand that I use xpathsApply to gain content, but if I change the name of doc to doc111, it doesnt work.
-#Confused, I don't know why there is a lot of blank space in my html. During class, I asked my group mate, 劉振寧, he presumed that the reason might be that some articles have been deleted.
+#Confused, I don't know why there is a lot of blank space in my html. During class, I asked my group mate, ??撖?, he presumed that the reason might be that some articles have been deleted.
 
 #Fail
 #I couldn't sort the articles in different timing classification. 
