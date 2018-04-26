@@ -1,7 +1,7 @@
 ---
 title: "project11--Analyzing "
 author: "christine"
-date: "2018年4月10日"
+date: "2018撟?4???10?"
 output: html_document
 ---
 
@@ -121,23 +121,23 @@ docs = Corpus(VectorSource(rawData$text))
 toSpace <- content_transformer(function(x, pattern) {
   return (gsub(pattern, " ", x))
 })
-docs <- tm_map(docs, toSpace, "的")
-docs <- tm_map(docs, toSpace, "啊")
-docs <- tm_map(docs, toSpace, "有")
-docs <- tm_map(docs, toSpace, "了")
-docs <- tm_map(docs, toSpace, "是")
-docs <- tm_map(docs, toSpace, "很")
-docs <- tm_map(docs, toSpace, "都")
-docs <- tm_map(docs, toSpace, "我")
-docs <- tm_map(docs, toSpace, "喔")
-docs <- tm_map(docs, toSpace, "嘖")
-docs <- tm_map(docs, toSpace, "幹")
-docs <- tm_map(docs, toSpace, "沒")
-docs <- tm_map(docs, toSpace, "你")
-docs <- tm_map(docs, toSpace, "妳")
-docs <- tm_map(docs, toSpace, "哪")
-docs <- tm_map(docs, toSpace, "嗎")
-docs <- tm_map(docs, toSpace, "呀")
+docs <- tm_map(docs, toSpace, "???")
+docs <- tm_map(docs, toSpace, "???")
+docs <- tm_map(docs, toSpace, "???")
+docs <- tm_map(docs, toSpace, "鈭?")
+docs <- tm_map(docs, toSpace, "?")
+docs <- tm_map(docs, toSpace, "敺?")
+docs <- tm_map(docs, toSpace, "?")
+docs <- tm_map(docs, toSpace, "???")
+docs <- tm_map(docs, toSpace, "???")
+docs <- tm_map(docs, toSpace, "???")
+docs <- tm_map(docs, toSpace, "撟?")
+docs <- tm_map(docs, toSpace, "瘝?")
+docs <- tm_map(docs, toSpace, "雿?")
+docs <- tm_map(docs, toSpace, "憒?")
+docs <- tm_map(docs, toSpace, "?")
+docs <- tm_map(docs, toSpace, "???")
+docs <- tm_map(docs, toSpace, "??")
 docs <- tm_map(docs, removePunctuation)
 docs <- tm_map(docs, removeNumbers)
 docs <- tm_map(docs, stripWhitespace)
@@ -146,11 +146,11 @@ docs <- tm_map(docs, stripWhitespace)
 
 
 
-#It took me a while to figure out which 編碼 to save the file, and I tried all types to find the right one.
+#It took me a while to figure out which 蝺函Ⅳ to save the file, and I tried all types to find the right one.
 
 docnum = length(rawData)
 mixseg = worker()
-new_user_word(mixseg, c('賽爾提克','選秀大會','搬上檯面'))
+new_user_word(mixseg, c('鞈賜????','?蝘憭扳??','?銝狗?'))
 #This is inspired by the sharing session during class. I took a look at the data. There were also words that are not cut correctly. In my case, there are only three big mistakes.
 Alltoken = list()
 Allfreq = list()
