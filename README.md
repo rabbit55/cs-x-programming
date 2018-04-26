@@ -40,7 +40,7 @@ During class
 2. Download Githubdesktop
 
 3. Finish my first Rcrawler and Rmarkdown
-   [week2_homework](file:///C:/Users/Christine%20Lin/Documents/GitHub/cs-x-programming/week2/week2rmarkdown.html)
+   [week2_homework](https://rabbit55.github.io/cs-x-programming/week2/week2rmarkdown.html)
 
 4. Introdcution to ggplot2
 
