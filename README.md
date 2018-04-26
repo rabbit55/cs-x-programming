@@ -55,7 +55,7 @@ Week4
 During class
 
 1. Finish the ggplot session homework
-   [ggplot2_homework] ()
+   [ggplot2_homework] (https://rabbit55.github.io/cs-x-programming/week3/week3_homework.html)
 
 2. Learn how to gain all the posts in facebook
 
