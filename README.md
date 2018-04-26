@@ -55,7 +55,7 @@ Week4
 During class
 
 1. Finish the ggplot session homework
-   [ggplot2_homework] (https://rabbit55.github.io/cs-x-programming/week3/week3_homework.html)
+   [ggplot2_homework](https://rabbit55.github.io/cs-x-programming/week3/week3_homework.html)
 
 2. Learn how to gain all the posts in facebook
 
@@ -70,14 +70,14 @@ Week5
 during class
 
 1. A peer helped me with finishing Wordcloud. Though I still haven't totally understanded how the code works.
-   [week4_homework] (https://rabbit55.github.io/cs-x-programming/week4/week_four_homework.html)
+   [week4_homework](https://rabbit55.github.io/cs-x-programming/week4/week_four_homework.html)
 
 After class
 
 1. I am interested in adding color in all diagrams, thus I look up some website and modify my ggplot homework.
 Here is the link: http://ggplot2.tidyverse.org/reference/geom_histogram.html
 
-2. [first project] (https://rabbit55.github.io/cs-x-programming/week6/first_project.html)
+2. [first project](https://rabbit55.github.io/cs-x-programming/week6/first_project.html)
 
 Week6
 
