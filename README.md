@@ -85,5 +85,27 @@ during class
 
 1. Learn a brief idea of machine leaning. Find kaggle really interesting! 
 
-2. 
+Week7
+
+during class
+
+1. Learn a breif idea of machine learning.
+
+Week8
+
+during class
+
+1. Group presentation about Titanic.
+
+2. Learn SVM.
+
+After class
+
+1. Analyze Titanic data on our own.
+
+2. Finished project 2.
+
+Week9
+
+1. Learn linear regression analysis. 
 
