@@ -1,0 +1,6 @@
+setwd("C:/Users/Christine Lin/Documents/GitHub/cs-x-programming/week8")
+getwd()
+libraray(ggplot2)
+Data <- read.table(file = "titanicTrain.csv", sep = ",")
+#Data1 <- data.frame(Data)
+ggplot(data = Data,x = sex,y = survived)

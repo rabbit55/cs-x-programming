@@ -1,7 +1,7 @@
 ---
 title: "Analyzing NBA articles and dicussions in PTT"
 author: "christine"
-date: "2018/4/21Ó£ô"
+date: "2018/4/21Ó£?"
 output: html_document
 ---
 
@@ -10,13 +10,13 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-At First, I tried to analyze the data with time difference, but I couldn?¬ÄÓ®Ñ combine the content of articles. Therefore, I tried to make the project easier by simply using tfidf to find keywords. I succeeded in this part, but I didn?¬ÄÓ®Ñ know how to change the form of the data. When I tried to use ggplot2, there was an error message: ggplot2 doesn?¬ÄÓ®Ñ know how to deal with data of class matrix. In brief, I failed this project. I was not able to visualize the data.
+At First, I tried to analyze the data with time difference, but I couldn??ÄÓ®? combine the content of articles. Therefore, I tried to make the project easier by simply using tfidf to find keywords. I succeeded in this part, but I didn??ÄÓ®? know how to change the form of the data. When I tried to use ggplot2, there was an error message: ggplot2 doesn??ÄÓ®? know how to deal with data of class matrix. In brief, I failed this project. I was not able to visualize the data.
 
 Even though I failed, I still want to note down some reflection and some of my ideas. I aim to analyze NBA articles in PTT. If I were able to add time this factor into account, I would like to combine the matches of NBA. By comparing when the matches end, I may find a connection between the match and the articles content in PTT.
 
 At the end, I only finished tfidf part. To my excitement, I figured out that some popular players, indeed, have higher freqency at the result. Wade, lbj(labron james), Kobe, klay, curry are all famous NBA players, and their names are mentioned significantly more often.
 
-All in all, I?¬ÄÓ®Üe spent quite a long time on this project. It is a shame that I didn?¬ÄÓ®Ñ make it. Hopefully, I will make more achievement in the following projects.
+All in all, I??ÄÓ®Üe spent quite a long time on this project. It is a shame that I didn??ÄÓ®? make it. Hopefully, I will make more achievement in the following projects.
 
 
 
@@ -91,7 +91,7 @@ head(content)
 #Success
 #Got all the content, and I also learned the differences between apply, sapply, lapply.
 #I am confused how doc works.I understand that I use xpathsApply to gain content, but if I change the name of doc to doc111, it doesnt work.
-#Confused, I don't know why there is a lot of blank space in my html. During class, I asked my group mate, ??Ôê§ÔóÑÊíñ?, he presumed that the reason might be that some articles have been deleted.
+#Confused, I don't know why there is a lot of blank space in my html. During class, I asked my group mate, ???ê§??ÑÊ???, he presumed that the reason might be that some articles have been deleted.
 
 #Fail
 #I couldn't sort the articles in different timing classification. 

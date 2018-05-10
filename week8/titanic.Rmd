@@ -1,0 +1,78 @@
+---
+title: "Titanic"
+author: "christine"
+date: "2018/05/02—¥"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+setwd("C:/Users/Christine Lin/Documents/GitHub/cs-x-programming/week8")
+getwd()
+library(ggplot2)
+Data <- read.table(file = "titanicTrain.csv", sep = ",")
+female_insea <- read.table(file = "female_insea.csv", sep = ",")
+female_onboat<- read.table(file = "female_onboat.csv", sep = ",")
+#Data1 <- data.frame(Data)
+ggplot(Data,aes(x = V4, fill = V2))+
+  geom_bar()
+#±q©Ê§O¬Ý¥X¨k©Êªº¦º¤`²v¸û°ª
+ggplot(Data,aes(x = V12, fill = V2))+
+  geom_bar()
+#±q¹Ï¤¤¥i¥H¬Ý¨ì§Y¨Ï¸ê®ÆÅã¥Ü¨S¤W²î¡AÁÙ¬O¦³¥ÍÁÙªÌ¡F¥H¤W±Ï¥Í¸¥ªº¸Ü¡A¥u¦³±Ï¥Í¸¥A¦³³¡¤À­¼«È¦º¤`¡C
+#¦bclass3ªº±¡ªp¤U¡A¦³¤W±Ï¥Í¸¥A¦s¬¡©M¦º¤`ªº­è¦n¦U¬O3¤H¡C
+ggplot(Data,aes(x = V9, fill = V2))+
+  geom_bar()
+#·Q±q²¼»ù¬Ý¥X¥Í¦s²vªºÃö«Y¡A²¼»ù¶V°ª¡A¦s¬¡²v¦³µy·L°ª¸qÂIªºÁÍ¶Õ¡A¦ý¤£¬O«Ü©úÅã¡C
+
+
+#³Ñ¤Uªº´N¬O¶]¶]¬Ý¦Ñ®vªºcode
+set.seed(10111)
+x = matrix(rnorm(40), 20, 2)
+y = rep(c(-1, 1), c(10, 10))
+x[y == 1, ] = x[y == 1, ] + 1
+plot(x, col = y + 3, pch = 19)
+library(e1071)
+dat = data.frame(x, y = as.factor(y))
+svmfit = svm(y ~ ., data = dat, 
+             kernel = "linear", 
+             cost = 10, scale = FALSE)
+print(svmfit)
+plot(svmfit, dat)
+make.grid = function(x, n = 75) {
+  grange = apply(x, 2, range)
+  x1 = seq(from = grange[1, 1], to = grange[2, 1], length = n)
+  x2 = seq(from = grange[1, 2], to = grange[2, 2], length = n)
+  expand.grid(X1 = x1, X2 = x2)
+}
+xgrid = make.grid(x)
+ygrid = predict(svmfit, xgrid)
+plot(xgrid, col = c("red", "blue")[as.numeric(ygrid)], pch = 20, cex = 0.2)
+points(x, col = y + 3, pch = 19)
+points(x[svmfit$index, ], pch = 5, cex = 2)
+beta = drop(t(svmfit$coefs) %*% x[svmfit$index, ])
+beta0 = svmfit$rho
+plot(xgrid, col = c("red", "blue")[as.numeric(ygrid)], pch = 20, cex = 0.2)
+points(x, col = y + 3, pch = 19)
+points(x[svmfit$index, ], pch = 5, cex = 2)
+abline(beta0/beta[2], -beta[1]/beta[2])
+abline((beta0 - 1)/beta[2], -beta[1]/beta[2], lty = 2)
+abline((beta0 + 1)/beta[2], -beta[1]/beta[2], lty = 2)
+
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
