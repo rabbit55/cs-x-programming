@@ -104,8 +104,17 @@ After class
 1. Analyze Titanic data on our own.
 
 2. Finished project 2.
+[Project2](https://rabbit55.github.io/cs-x-programming/week9/TitanicAnalysis.html)
 
 Week9
 
-1. Learn linear regression analysis. 
+1. Learn linear regression analysis.
+
+2. Prepare for group presentation about Kaggle.
+
+Week10
+
+1. Learn Apriori
+
+2. Finished group presentation about KKBOX
 
