@@ -103,9 +103,9 @@ After class
 
 1. Analyze Titanic data on our own.
 
-2. Finished project2 
+2. Finished the third project(Titanic) 
 
-[Project2](https://rabbit55.github.io/cs-x-programming/week9/TitanicAnalysis.html)
+[Third Project](https://rabbit55.github.io/cs-x-programming/week9/TitanicAnalysis.html)
 
 Week9
 
