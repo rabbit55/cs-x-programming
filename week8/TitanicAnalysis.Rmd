@@ -1,7 +1,7 @@
 ---
 title: "TitanicAnalysis"
 author: "AmyHs , slimykat , Rabbit55"
-date: "2018å¹?5???2?—¥"
+date: "2018???5???2???"
 output: html_document
 ---
 
@@ -15,7 +15,7 @@ library(e1071)
 library(knitr)
 ```
 
-#è³‡æ??
+#è³‡???
 ```{r}
 train<-read.csv("titanicTrain.csv")
 train<-train[-c(1001:1310),]
@@ -23,7 +23,7 @@ quest<-read.csv("titanicQuestion.csv")
 train<-rbind(train,train)
 ```
 
-#è³‡æ?™ç¼ºå¤±é??
+#è³‡???ç¼ºå¤±???
 ```{r}
 is_na<-function(x){
   sum(is.na(x))
@@ -32,14 +32,14 @@ sapply(train,is_na)
 sapply(quest,is_na)
 ```
 
-#è³‡æ?™æŽ¢ç´?
-##0.1è³‡æ?™è?‰æ??
+#è³‡???æŽ¢???
+##0.1è³‡?????????
 ```{r}
 train$survived<-as.factor(train$survived)
 train$pclass<-as.ordered(train$pclass)
 ```
 
-##0.2?§åˆ¥??‡æ­»äº?
+##0.2??åˆ¥???æ­»???
 ```{r}
 ggplot(train[!is.na(train$survived),], aes(x = sex, fill = survived)) +
   geom_bar(stat='count', position='dodge') + theme_grey() +
@@ -47,8 +47,8 @@ ggplot(train[!is.na(train$survived),], aes(x = sex, fill = survived)) +
   geom_label(stat='count', aes(label=..count..))
 ```
 
-##0.3æ­»äº¡??‡pclass
-###0.3.1 class??‡æ­»äº?
+##0.3æ­»äº¡???pclass
+###0.3.1 class???æ­»???
 ```{r}
 ggplot(train[!is.na(train$survived),], aes(x = pclass, fill = survived)) +
   geom_bar(stat='count', position='dodge') + labs(x = 'Training data only') +
@@ -65,46 +65,46 @@ ggplot(train[!is.na(train$survived),], aes(x = pclass, fill = survived)) +
 ##0.4 fare&æ­»äº¡
 ```{r}
 train[train$fare==0,]
-#?™¼?¾??‰class1ä¸­fare=0??„äººå¾ˆå?šï?Œå¥½??ç¥¨?ƒ¹è·Ÿé?Žç?šæ?–å¹´é½¡ç?„ç›´?Ž¥??œè¯??‹ä?å‡ºä¾?
+#?????????class1ä¸­fare=0???äººå¾ˆ??????å¥½???ç¥¨???è·Ÿ?????????å¹´é½¡???ç›´??????è¯??????å‡º???
 ggplot(train[!is.na(train$survived),], aes(x = fare, fill = survived)) +
   geom_histogram( bins= 30) +
   labs(x = 'Training data only', y= "Count") + facet_grid(.~pclass)
-#??‹ä?å‡ºä»éº¼ç?æ??
+#??????å‡º??éº¼??????
 ```
 
-##0.5 ç¼ºå¤±?¼è?•ç??
-###0.5.1??ˆè§£æ±ºboat??„ç¼ºå¤±å?
+##0.5 ç¼ºå¤±????????
+###0.5.1???è§£æ±ºboat???ç¼ºå¤±??
 ```{r}
 train$boat = as.numeric(train$boat != "")
 ```
 
-###0.5.2?”¨?¾??‰è?‡æ?™é?æ¸¬å¹´ç???„ç¼ºå¤±å?
+###0.5.2??????????????????æ¸¬å¹´?????ç¼ºå¤±??
 ```{r}
 agelm <- lm(age ~ pclass+boat+sex+parch+sibsp, data=train[!is.na(train$age),])
-#??‹ä?ä¸‹å“ªä¸?…é?æ¸¬??›è?ƒå¥½ï¼Œä»¥??ŠR^2?
+#?????ä¸‹å“ª???????æ¸¬??????å¥½ï¼Œä»¥???R^2?
 summary(agelm)
 train$agelm<-predict(agelm,train)
 ```
 
-###0.5.3??æ¸¬çµæ?œæ?”è??
+###0.5.3???æ¸¬çµ?????????
 ```{r}
 hist(train$age[!is.na(train$age)], main='Original data, non-missing', xlab='age')
 hist(train$agelm, main= 'LM predictions', xlab='age', xlim=range(0:80))
 ```
 
-###0.5.4å°‡ç¼º¼è?œé??
+###0.5.4å°‡ç¼º???????
 ```{r}
 indexMissingAge <- which(is.na(train$age))
 train$age[indexMissingAge] <- train$agelm[indexMissingAge]
 
 fare_NAindex = which(is.na(train$fare))
-#?™¼?¾??æ??3701??Ÿç¥¨? ¹??„å®¢äººåœ¨fare factor??•æ?‰na
+#????????????3701???ç¥¨??????å®¢äººåœ¨fare factor??????na
 temp = train$fare[nchar( as.character(train$ticket)) == 4 & grepl("^3",as.character(train$ticket))]
 average = sum(temp[!is.na(temp)])/(length(temp)-1)
 train[fare_NAindex,"fare"] = average
-#å°‡é?žä¼¼ç¥¨æ ¹??Ÿç?„ç¥¨?ƒ¹??–å¹³???
+#å°‡???ä¼¼ç¥¨æ ¹??????ç¥¨??????å¹³???
 
-#å°‡è?‡æ?™æ?†å?†æ?å?›å‹å?å¡?
+#å°‡?????????????????????????
 female_insea = train[train$sex == "female" & train$boat == 0,c("age","fare","survived")]
 female_onboat = train[train$sex == "female" & train$boat == 1,c("age","fare","survived")]
 male_insea = train[train$sex == "male" & train$boat == 0,c("age","fare","survived")]
@@ -115,7 +115,7 @@ female_onboat[,3] = as.factor(female_onboat[,3])
 male_insea[,3] = as.factor(male_insea[,3])
 male_onboat[,3] = as.factor(male_onboat[,3])
 
-#å°fare??–log10æ¸›å?‘æ•¸??šå?ç§»
+#å°fare???log10æ¸›???æ•¸??????ç§»
 female_insea[,2] = log10(female_insea[,2])
 female_onboat[,2] = as.factor(female_onboat[,2])
 male_insea[,2] = as.factor(male_insea[,2])
@@ -124,7 +124,7 @@ male_onboat[,2] = as.factor(male_onboat[,2])
 
 ##0.5 SVM
 ```{r}
-#??†åˆ¥å°æ?å‹å?å¡Šå?šSVM
+#???åˆ¥å°???????å¡Š???SVM
 
 plot_svm <- function(dat){
   survived = as.numeric(dat[,3])
@@ -148,7 +148,7 @@ outcome2 = data.frame(predict(svm2,female_onboat[is.na(female_onboat$survived),c
 outcome3 = data.frame(predict(svm3,male_insea[is.na(male_insea$survived),c(1:2)]))
 outcome4 = data.frame(predict(svm4,male_onboat[is.na(male_onboat$survived),c(1:2)]))
 
-#??ˆä½µçµæ?œé²è?Œè¼¸?‡º
+#???ä½µçµ????????è¼¸???
 names(outcome1) = "y"
 names(outcome2) = "y"
 names(outcome3) = "y"
