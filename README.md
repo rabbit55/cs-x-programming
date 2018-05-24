@@ -119,3 +119,7 @@ Week10
 
 2. Finished group presentation about KKBOX
 
+Here is the link to the powerpoint:
+
+https://github.com/rabbit55/cs-x-programming/blob/master/week10/KKBOX_final.pptx
+
