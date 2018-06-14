@@ -120,9 +120,13 @@ Week10
 2. Finished group presentation about KKBOX
 
 Project1: [first project](https://rabbit55.github.io/cs-x-programming/week6/first_project.html)
+
 Project2: https://github.com/rabbit55/cs-x-programming/blob/master/week10/KKBOX_final.pptx (Power point link)
+
 Project3: [first project](https://rabbit55.github.io/cs-x-programming/week6/first_project.html)
+
 Project4: 
+
 Project5: 
 
 
