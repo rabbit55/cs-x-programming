@@ -123,7 +123,7 @@ Project1: [first project](https://rabbit55.github.io/cs-x-programming/week6/firs
 
 Project2: https://github.com/rabbit55/cs-x-programming/blob/master/week10/KKBOX_final.pptx (Power point link)
 
-Project3: [first project](https://rabbit55.github.io/cs-x-programming/week6/first_project.html)
+Project3: [Third Project](https://rabbit55.github.io/cs-x-programming/week9/TitanicAnalysis.html)
 
 Project4: 
 
