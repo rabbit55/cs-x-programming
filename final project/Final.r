@@ -5,7 +5,7 @@ library(stringr)
 library(jiebaRD)
 library(jiebaR)
 
-text = read.table(file = "散文.txt",quote = "", encoding="utf8")
+text = read.table(file = "散文.txt", encoding="big5")
 text = text$V1
 data.corpus = Corpus(VectorSource(text))
 data.corpus = tm_map(data.corpus, removePunctuation)
