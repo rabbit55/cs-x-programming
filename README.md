@@ -9,6 +9,18 @@ Goal : Do what I want. Dare to dream. Never hesitate to grab the opportunity, ev
 
 Motto : Strengh doesn't come from winning. When you go through hardship and decide not to surrender. That is strengh.
 
+Project1: [first project](https://rabbit55.github.io/cs-x-programming/week6/first_project.html)
+
+Project2: https://github.com/rabbit55/cs-x-programming/blob/master/week10/KKBOX_final.pptx (Power point link)
+
+Project3: [Third Project](https://rabbit55.github.io/cs-x-programming/week9/TitanicAnalysis.html)
+
+Project4: 
+
+Project5: [Fifth Project](https://rabbit55.github.io/cs-x-programming/week12/project5.html)
+
+
+
 Week1
 
 (I enrolled this lesson after week1.)
@@ -118,15 +130,5 @@ Week10
 1. Learn Apriori
 
 2. Finished group presentation about KKBOX
-
-Project1: [first project](https://rabbit55.github.io/cs-x-programming/week6/first_project.html)
-
-Project2: https://github.com/rabbit55/cs-x-programming/blob/master/week10/KKBOX_final.pptx (Power point link)
-
-Project3: [Third Project](https://rabbit55.github.io/cs-x-programming/week9/TitanicAnalysis.html)
-
-Project4: 
-
-Project5: [Fifth Project](https://rabbit55.github.io/cs-x-programming/week12/project5.html)
 
 
