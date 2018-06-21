@@ -1,0 +1,28 @@
+---
+title: "final projet"
+author: "christine"
+date: "2018年6月14日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r cars}
+library(NLP)
+library(tm)
+library(tmcn)
+library(stringr)
+library(jiebaRD)
+library(jiebaR)
+
+text = read.table(file = "張愛玲我的天才夢.txt")
+text = text$V1
+data.corpus = Corpus(VectorSource(text))
+data.corpus = tm_map(data.corpus, removePunctuation)
+data.corpus = tm_map(data.corpus, removeNumbers)
+data.corpus = tm_map(data.corpus, function(word){gsub("[A-Z你我他們也又是]","",word) })
+mixseg = worker()
+```

@@ -4,13 +4,16 @@ library(tmcn)
 library(stringr)
 library(jiebaRD)
 library(jiebaR)
-
-text = read.table(file = "散文.txt", encoding="big5")
+library(sde)
+Sys.setlocale("LC_ALL","Chinese")
+text = read.table(file = "林海音竊書記.txt", sep = " ", encoding="UTF-8")
 text = text$V1
 data.corpus = Corpus(VectorSource(text))
 data.corpus = tm_map(data.corpus, removePunctuation)
 data.corpus = tm_map(data.corpus, removeNumbers)
-data.corpus = tm_map(data.corpus, function(word){gsub("[A-Z你我他們也又是]","",word) })
+data.corpus = tm_map(data.corpus, function(word){gsub("[A-Z你我他們也又是的啊很都有人]","",word) })
+data.corpus = tm_map(data.corpus, function(word){gsub("[0-9a-z]","",word)})
+
 mixseg = worker()
 
 jieba_tokenizer = function(d){
