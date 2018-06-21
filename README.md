@@ -15,10 +15,11 @@ Project2: https://github.com/rabbit55/cs-x-programming/blob/master/week10/KKBOX_
 
 Project3: [Third Project](https://rabbit55.github.io/cs-x-programming/week9/TitanicAnalysis.html)
 
-Project4: 
+Project4: [Fourth Project](https://rabbit55.github.io/cs-x-programming/project4/agri_prod_Arule.html)
 
 Project5: [Fifth Project](https://rabbit55.github.io/cs-x-programming/week12/project5.html)
 
+Final project: 
 
 
 Week1
