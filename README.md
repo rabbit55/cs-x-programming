@@ -19,9 +19,10 @@ Project4: [Fourth Project](https://rabbit55.github.io/cs-x-programming/project4/
 
 Project5: [Fifth Project](https://rabbit55.github.io/cs-x-programming/week12/project5.html)
 
+Report before the final project: https://github.com/rabbit55/cs-x-programming/blob/master/final%20project/final.pptx (link to brief powerpoint)
+
 Final project: https://github.com/rabbit55/cs-x-programming/blob/master/final%20project/Final%20project.pptx (link to final powerpoint)
-   
-               https://github.com/rabbit55/cs-x-programming/blob/master/final%20project/final.pptx (link to brief powerpoint)
+
 
 
 Week1
